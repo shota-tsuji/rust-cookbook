@@ -6,4 +6,5 @@ members = [
     "sorting-vectors",
     "ansi-terminal",
     "working-with-tarballs",
+    "read-write",
 ]
