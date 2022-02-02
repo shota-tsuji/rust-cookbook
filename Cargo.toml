@@ -3,4 +3,6 @@
 members = [
     "slog-sample",
     "generate-random-values",
+    "sorting-vectors",
+    "ansi-terminal",
 ]
