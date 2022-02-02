@@ -5,4 +5,5 @@ members = [
     "generate-random-values",
     "sorting-vectors",
     "ansi-terminal",
+    "working-with-tarballs",
 ]
