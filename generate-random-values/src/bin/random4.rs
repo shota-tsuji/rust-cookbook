@@ -23,4 +23,5 @@ fn main() {
     let rand_point: Point = rng.gen();
     println!("Random tuple: {:?}", rand_tuple);
     println!("Random Point: {:?}", rand_point);
+    println!("Random Point: x:{}, y:{}", rand_point.x, rand_point.y);
 }
