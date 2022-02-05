@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::io::{BufReader, Read};
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 struct Item {
     foo: u64,
@@ -33,7 +34,4 @@ fn main() {
 
     println!("{:?}", items_table);
     println!("{:?}", items);
-    for item in items.iter() {
-        println!("{}, {}", item.bar, item.foo)
-    }
 }
