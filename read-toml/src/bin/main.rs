@@ -1,7 +1,7 @@
 #[macro_use]
 extern crate serde_derive;
-extern crate toml;
 extern crate core;
+extern crate toml;
 
 use std::fs;
 use std::io::{BufReader, Read};

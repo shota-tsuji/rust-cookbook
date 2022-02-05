@@ -7,6 +7,8 @@ fn main() {
     loop {
         let throw = die.sample(&mut rng);
         println!("Roll the die: {}", throw);
-        if throw == 6 { break; }
+        if throw == 6 {
+            break;
+        }
     }
 }

@@ -1,5 +1,5 @@
-use std::fs::File;
 use flate2::read::GzDecoder;
+use std::fs::File;
 use tar::Archive;
 
 fn main() -> Result<(), std::io::Error> {

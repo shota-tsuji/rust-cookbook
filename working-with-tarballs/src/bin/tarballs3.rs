@@ -1,7 +1,7 @@
 use error_chain::error_chain;
+use flate2::read::GzDecoder;
 use std::fs::File;
 use std::path::PathBuf;
-use flate2::read::GzDecoder;
 use tar::Archive;
 
 error_chain! {
@@ -13,7 +13,7 @@ error_chain! {
 
 fn main() -> Result<()> {
     let file = File::open("archive.tar.gz")?;
-    let mut  archive = Archive::new(GzDecoder::new(file));
+    let mut archive = Archive::new(GzDecoder::new(file));
     let prefix = "backup/logs";
 
     println!("Extracted the following files:");

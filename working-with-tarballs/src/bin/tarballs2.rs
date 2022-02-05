@@ -1,6 +1,6 @@
-use std::fs::File;
-use flate2::Compression;
 use flate2::write::GzEncoder;
+use flate2::Compression;
+use std::fs::File;
 
 fn main() -> Result<(), std::io::Error> {
     let tar_gz = File::create("archive.tar.gz")?;

@@ -1,13 +1,13 @@
 extern crate slog;
+extern crate slog_async;
+extern crate slog_atomic;
 extern crate slog_json;
 extern crate slog_term;
-extern crate slog_atomic;
-extern crate slog_async;
 
 use slog::*;
 use slog_atomic::*;
-use std::sync::{Arc, Mutex};
 use std::sync::atomic::AtomicUsize;
+use std::sync::{Arc, Mutex};
 
 use std::sync::atomic::Ordering::SeqCst;
 use std::thread;
@@ -29,7 +29,7 @@ fn main() {
     let ctrl = drain.ctrl();
     let root = Logger::root(
         drain.fuse(),
-        o!("version" => env!("CARGO_PKG_VERSION"), "build_id" => "8dfljdf")
+        o!("version" => env!("CARGO_PKG_VERSION"), "build_id" => "8dfljdf"),
     );
 
     let log = root.new(o!("child" => 1));

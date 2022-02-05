@@ -1,6 +1,6 @@
+use same_file::is_same_file;
 use std::io;
 use std::path::{Path, PathBuf};
-use same_file::is_same_file;
 
 fn contains_loop<P: AsRef<Path>>(path: P) -> io::Result<Option<(PathBuf, PathBuf)>> {
     let path = path.as_ref();
@@ -13,12 +13,15 @@ fn contains_loop<P: AsRef<Path>>(path: P) -> io::Result<Option<(PathBuf, PathBuf
             return Ok(Some(looped_paths));
         }
     }
-    return Ok(None)
+    return Ok(None);
 }
 
 fn main() {
     assert_eq!(
         contains_loop("/tmp/foo/bar/baz/qux/bar/baz").unwrap(),
-        Some((PathBuf::from("/tmp/foo"), PathBuf::from("/tmp/foo/bar/baz/qux")))
+        Some((
+            PathBuf::from("/tmp/foo"),
+            PathBuf::from("/tmp/foo/bar/baz/qux")
+        ))
     );
 }

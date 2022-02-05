@@ -1,5 +1,5 @@
-use rand::Rng;
 use rand::distributions::{Distribution, Standard};
+use rand::Rng;
 
 #[derive(Debug)]
 struct Point {

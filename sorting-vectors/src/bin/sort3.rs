@@ -6,7 +6,7 @@ struct Person {
 
 impl Person {
     pub fn new(name: String, age: u32) -> Self {
-        Person { name, age, }
+        Person { name, age }
     }
 }
 
@@ -26,7 +26,8 @@ fn main() {
             Person::new("Al".to_string(), 60),
             Person::new("John".to_string(), 1),
             Person::new("Zoe".to_string(), 25),
-        ]);
+        ]
+    );
 
     // Sort people by age
     people.sort_by(|a, b| b.age.cmp(&a.age));

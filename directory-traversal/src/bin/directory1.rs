@@ -1,5 +1,5 @@
-use std::{env, fs};
 use error_chain::error_chain;
+use std::{env, fs};
 
 error_chain! {
     foreign_links {
@@ -10,7 +10,10 @@ error_chain! {
 
 fn main() -> Result<()> {
     let current_dir = env::current_dir()?;
-    println!("Entries modiffied in the last 24 hours in {:?}", current_dir);
+    println!(
+        "Entries modiffied in the last 24 hours in {:?}",
+        current_dir
+    );
 
     for entry in fs::read_dir(current_dir)? {
         let entry = entry?;
