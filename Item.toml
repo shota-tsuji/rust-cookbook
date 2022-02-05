@@ -1,0 +1,7 @@
+[[items]]
+foo = 10
+bar = 100
+
+[[items]]
+foo = 12
+bar = 144
