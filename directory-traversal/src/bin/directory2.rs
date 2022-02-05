@@ -13,7 +13,7 @@ fn contains_loop<P: AsRef<Path>>(path: P) -> io::Result<Option<(PathBuf, PathBuf
             return Ok(Some(looped_paths));
         }
     }
-    return Ok(None);
+    Ok(None)
 }
 
 fn main() {

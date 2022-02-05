@@ -13,7 +13,7 @@ fn read_file(path: String) -> Result<String, String> {
     let mut file_content = String::new();
 
     let mut fr = fs::File::open(path)
-        .map(|f| BufReader::new(f))
+        .map(BufReader::new)
         .map_err(|e| e.to_string())?;
 
     fr.read_to_string(&mut file_content)
@@ -33,4 +33,7 @@ fn main() {
 
     println!("{:?}", items_table);
     println!("{:?}", items);
+    for item in items.iter() {
+        println!("{}, {}", item.bar, item.foo)
+    }
 }
